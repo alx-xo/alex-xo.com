@@ -12,6 +12,7 @@ images: [
   "./assets/render-1.png",
   "./assets/render-2.png",
   "./assets/render-3.png",
+  "./assets/render-4.png",
 ]
 ---
 
