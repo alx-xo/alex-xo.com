@@ -1,8 +1,0 @@
-services:
-  - type: web
-    runtime: static
-    name: alex-xo
-    staticPublishPath: ./dist
-    buildCommand: pnpm install; pnpm build
-    previews:
-      generation: automatic

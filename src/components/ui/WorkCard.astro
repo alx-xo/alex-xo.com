@@ -1,0 +1,61 @@
+---
+import { Image } from "astro:assets";
+import type { WorkType } from "@/content.config";
+
+interface Props {
+  work: {
+    id: string;
+    data: WorkType;
+  };
+}
+
+const {
+  work: {
+    id,
+    data: { title, description, type, tech, link, startDate, cardSize, cover, coverAlt = "" },
+  },
+} = Astro.props;
+
+const isSmallCard = cardSize === "small";
+---
+
+{
+  isSmallCard ? (
+    <div class="w-full">
+      <div class="bg-work-card shadow-card-work flex flex-col">
+        <div class="bg-gray-200 w-full">
+          {cover && (
+            <a href={`/work/${id}`} class="block">
+              <Image src={cover} alt={coverAlt} class="aspect-400/240 object-cover object-top" />
+            </a>
+          )}
+        </div>
+        <div class="bg-card text-primary px-6 py-4 flex">
+          <a href={`/work/${id}`}>
+            <h3 class="font-black italic text-lg">{title}</h3>
+          </a>
+        </div>
+      </div>
+    </div>
+  ) : (
+    <div class="w-full">
+      <div class="bg-work-card shadow-card-work flex flex-row gap-2">
+        <div class="bg-card text-primary flex flex-col px-6 py-4 flex-2/5">
+          <div class="mt-auto">
+            <a href={`/work/${id}`}>
+              <h3 class="font-black italic text-lg">{title}</h3>
+            </a>
+          </div>
+        </div>
+
+        <div class="bg-gray-200 flex-3/5 grow-0">
+          {cover && (
+            <a href={`/work/${id}`} class="block">
+              <Image src={cover} alt={coverAlt} />
+            </a>
+          )}
+        </div>
+      </div>
+    </div>
+  )
+}

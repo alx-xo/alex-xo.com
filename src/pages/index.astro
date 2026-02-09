@@ -1,14 +1,27 @@
 ---
-import Analytics from "../components/Analytics.astro";
-import Welcome from "../components/Welcome.astro";
-import Main from "../layouts/Main.astro";
+import Main from "@/layouts/Main.astro";
+import Card from "@/components/ui/Card.astro";
 ---
 
 <Main
-  content={{
-    title: "Hi I’m Alex",
+  page={{
+    title: "Alex ・ FrontEnd Engineer & Designer",
+    description: "I'm Alex, a FrontEnd Engineer & Designer based in San Francisco",
+    navActive: "home",
   }}
 >
-  <Welcome />
-  <Analytics hostname="connect.alex-xo.com" id="b86fca64-00e5-4084-a766-6870a0644bc1" />
+  <div class="flex justify-center items-center w-full min-h-[calc(100dvh-82px)] px-6">
+    <Card title="about">
+      <h2 class="text-xl font-black italic">Hi I’m Alex and I like to make things</h2>
+
+      <p class="text-base font-medium">
+        Sometimes I’m a FrontEnd Developer, and have been a UX Engineer. Always interested in making
+        the web enjoyable.
+        {" "}
+        <a href="/work" class="underline underline-offset-2">View my work</a>
+      </p>
+
+      <p class="text-base font-medium">I also dabble in design, block prints, and painting</p>
+    </Card>
+  </div>
 </Main>

@@ -1,0 +1,32 @@
+---
+const { navActive } = Astro.props;
+
+const navItems = [
+  { name: "home", href: "/" },
+  { name: "work", href: "/work" },
+  { name: "contact", href: "/contact" },
+];
+---
+
+<header class="bg-primary w-full flex justify-center items-center sticky top-0 z-50">
+  <nav class="p-5">
+    <ul class="list-none flex flex-row items-center gap-6 italic text-[28px] font-black">
+      {
+        navItems.map((item) => (
+          <li class="group cursor-pointer">
+            <a
+              class:list={[
+                "group-hover:text-secondary",
+                { "text-primary-foreground": item.name !== navActive },
+                { "text-secondary": item.name === navActive },
+              ]}
+              href={item.href}
+            >
+              {item.name}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+</header>

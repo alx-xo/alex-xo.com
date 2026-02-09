@@ -1,19 +1,47 @@
 ---
-import "../styles/global.css";
-const { content } = Astro.props;
+import { getImage } from "astro:assets";
+import faviconSvgSrc from "../assets/favicon.svg";
+import faviconPngSrc from "../assets/favicon.png";
+import Header from "@/components/ui/Header.astro";
+
+import "@/styles/global.css";
+
+const { page } = Astro.props;
+
+const baseTitle = "alex-xo";
+const pageTitle = page?.title || baseTitle;
+const pageDescription = page?.description || "";
+const navActive = page?.navActive;
+
+const appleTouchIcon = await getImage({
+  src: faviconPngSrc,
+  width: 180,
+  height: 180,
+  format: "png",
+});
+const faviconSvg = await getImage({ src: faviconSvgSrc, format: "svg" });
 ---
 
-<html lang="en">
+<!doctype html>
+<html lang="en" class="bg-white dark:bg-gray-950 scheme-light dark:scheme-dark">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link
-      rel="icon"
-      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🪴</text></svg>"
-    />
-    <title>{content?.title || "alex-xo"}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="icon" href={faviconSvg.src} type="image/svg+xml" />
+    <link rel="apple-touch-icon" href={appleTouchIcon.src} />
+
+    <link rel="preconnect" href="https://rsms.me/" />
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+
+    <meta name="description" content={pageDescription} />
+    <title>{pageTitle}</title>
   </head>
-  <body>
-    <slot />
+  <body class="bg-background font-sans">
+    <Header navActive={navActive} />
+    <main class="relative z-0">
+      <slot />
+    </main>
   </body>
 </html>

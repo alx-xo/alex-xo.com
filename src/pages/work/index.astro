@@ -1,0 +1,37 @@
+---
+import { getCollection } from "astro:content";
+import Main from "@/layouts/Main.astro";
+import WorkCard from "@/components/ui/WorkCard.astro";
+
+const allWorks = (await getCollection("work")).sort(
+  (a, b) => b.data.startDate.valueOf() - a.data.startDate.valueOf(),
+);
+
+const works = {
+  large: allWorks.filter((work) => !work.data.cardSize || work.data.cardSize === "large"),
+  small: allWorks.filter((work) => work.data.cardSize === "small"),
+};
+---
+
+<Main
+  page={{
+    title: "work ・ alex-xo",
+    description: "FrontEnd Development Work",
+    navActive: "work",
+  }}
+>
+  <div class="max-w-3xl m-auto px-6">
+    <div class="w-full pt-16 pb-8 flex">
+      <h1 class="font-black italic text-tertiary text-2xl">current work</h1>
+    </div>
+    <div class="flex flex-col gap-12 pb-12">
+      {works.large.map((work) => <WorkCard work={work} />)}
+    </div>
+    <div class="w-full pt-16 pb-8 flex">
+      <h1 class="font-black italic text-tertiary text-2xl">older work</h1>
+    </div>
+    <div class="grid grid-cols-2 gap-12 pb-12">
+      {works.small.map((work) => <WorkCard work={work} />)}
+    </div>
+  </div>
+</Main>

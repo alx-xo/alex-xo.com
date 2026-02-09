@@ -1,0 +1,14 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["typescript", "react", "vitest"],
+  "categories": {
+    "correctness": "warn"
+  },
+  "rules": {},
+  "settings": {},
+  "env": {
+    "browser": true
+  },
+  "globals": {},
+  "ignorePatterns": ["dist/**", "coverage/**", "vendor/**", "test/snapshots/**"]
+}

@@ -6,8 +6,9 @@ Built with [Astro](https://docs.astro.build)
 
 All commands are run from the root of the project, from a terminal:
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm run dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm run build`           | Build your production site to `./dist/`          |
-| `pnpm run preview`         | Preview your build locally, before deploying     |
+| Command       | Action                                       |
+| :------------ | :------------------------------------------- |
+| `bun install` | Installs dependencies                        |
+| `bun dev`     | Starts local dev server at `localhost:4321`  |
+| `bun build`   | Build your production site to `./dist/`      |
+| `bun preview` | Preview your build locally, before deploying |

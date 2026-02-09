@@ -1,0 +1,15 @@
+{
+  "name": "alex-xo",
+  "compatibility_date": "2026-02-09",
+  "assets": {
+    "directory": "./dist",
+  },
+  "workers_dev": true,
+  "preview_urls": false,
+  "routes": [
+    {
+      "pattern": "alex-xo.com",
+      "custom_domain": true,
+    },
+  ],
+}

@@ -1,5 +1,4 @@
 ---
-
 export interface Props {
   hostname: string;
   id: string;
@@ -8,7 +7,8 @@ export interface Props {
 const { hostname, id } = Astro.props;
 const baseUrl = `https://${hostname}/ingress/${id}`;
 ---
+
 <noscript>
-  <img src={`${baseUrl}/pixel.gif`}>
+  <img src={`${baseUrl}/pixel.gif`} />
 </noscript>
 <script defer src={`${baseUrl}/script.js`}></script>
