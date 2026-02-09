@@ -30,9 +30,9 @@ const isSmallCard = cardSize === "small";
             </a>
           )}
         </div>
-        <div class="bg-card text-primary px-6 py-4 flex">
+        <div class="bg-card text-primary px-5 sm:px-6 py-3 sm:py-4 flex">
           <a href={`/work/${id}`}>
-            <h3 class="font-black italic text-lg">{title}</h3>
+            <h3 class="font-black italic text-md sm:text-lg">{title}</h3>
           </a>
         </div>
       </div>
@@ -40,10 +40,10 @@ const isSmallCard = cardSize === "small";
   ) : (
     <div class="w-full">
       <div class="bg-work-card shadow-card-work flex flex-row gap-2">
-        <div class="bg-card text-primary flex flex-col px-6 py-4 flex-2/5">
+        <div class="bg-card text-primary flex flex-col px-5 sm:px-6 py-3 sm:py-4 flex-2/5">
           <div class="mt-auto">
             <a href={`/work/${id}`}>
-              <h3 class="font-black italic text-lg">{title}</h3>
+              <h3 class="font-black italic text-md sm:text-lg">{title}</h3>
             </a>
           </div>
         </div>

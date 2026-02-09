@@ -24,13 +24,13 @@ const works = {
     <div class="w-full pt-16 pb-8 flex">
       <h1 class="font-black italic text-tertiary text-2xl">current work</h1>
     </div>
-    <div class="flex flex-col gap-12 pb-12">
+    <div class="flex flex-col gap-10 sm:gap-12 pb-12">
       {works.large.map((work) => <WorkCard work={work} />)}
     </div>
     <div class="w-full pt-16 pb-8 flex">
       <h1 class="font-black italic text-tertiary text-2xl">older work</h1>
     </div>
-    <div class="grid grid-cols-2 gap-12 pb-12">
+    <div class="grid grid-cols-2 gap-10 sm:gap-12 pb-12">
       {works.small.map((work) => <WorkCard work={work} />)}
     </div>
   </div>
