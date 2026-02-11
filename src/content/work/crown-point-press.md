@@ -8,10 +8,7 @@ startDate: 2017-01-01
 cardSize: "small"
 cover: "./assets/crown-point-press-cover.jpg"
 coverAlt: ""
-images: [
-  "./assets/crown-point-press-1.jpg",
-  "./assets/crown-point-press-2.jpg",
-]
+images: ["./assets/crown-point-press-1.jpg", "./assets/crown-point-press-2.jpg"]
 ---
 
 Crown Point Press is a printmaking workshop in San Francisco. Primarily creating and publishing etched, intaglio prints. They have a large roster of over 100 artists who have published prints.

@@ -8,10 +8,7 @@ startDate: 2017-01-01
 cardSize: "small"
 cover: "./assets/peoples-barber-cover.jpg"
 coverAlt: ""
-images: [
-  "./assets/peoples-barber-1.jpg",
-  "./assets/peoples-barber-2.jpg",
-]
+images: ["./assets/peoples-barber-1.jpg", "./assets/peoples-barber-2.jpg"]
 ---
 
 Peoples Barber is a chain of barbershops located in the Bay Area. Built a customized WordPress site to allow for updates to locations, appointments, services, and photos.

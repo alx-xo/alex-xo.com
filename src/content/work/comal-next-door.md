@@ -7,9 +7,7 @@ startDate: 2017-02-01
 cardSize: "small"
 cover: "./assets/comal-next-door-cover.jpg"
 coverAlt: ""
-images: [
-  "./assets/comal-next-door-1.jpg",
-]
+images: ["./assets/comal-next-door-1.jpg"]
 ---
 
 Comal Next Door is a Mexican restaurant in Berkeley known for its fast service and authentic cuisine.

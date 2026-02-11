@@ -7,9 +7,7 @@ startDate: 2017-03-01
 cardSize: "small"
 cover: "./assets/jax-vineyards-cover.jpg"
 coverAlt: ""
-images: [
-  "./assets/jax-vineyards-cover.jpg",
-]
+images: ["./assets/jax-vineyards-cover.jpg"]
 ---
 
 Jax Vineyards is a family-owned, boutique winery located in Calistoga with a tasting room and event space in San Francisco.

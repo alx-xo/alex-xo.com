@@ -7,10 +7,7 @@ startDate: 2017-01-01
 cardSize: "small"
 cover: "./assets/wise-sons-cover.jpg"
 coverAlt: ""
-images: [
-  "./assets/wise-sons-1.jpg",
-  "./assets/wise-sons-2.jpg",
-]
+images: ["./assets/wise-sons-1.jpg", "./assets/wise-sons-2.jpg"]
 ---
 
 Wise Sons Deli combines classic Jewish recipes with the best Californian ingredients at several location in San Francisco.

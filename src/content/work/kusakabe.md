@@ -8,9 +8,7 @@ startDate: 2017-01-01
 cardSize: "small"
 cover: "./assets/kusakabe-cover.jpg"
 coverAlt: ""
-images: [
-  "./assets/kusakabe-1.jpg",
-]
+images: ["./assets/kusakabe-1.jpg"]
 ---
 
 Kusakabe is a Japanese restaurant in San Francisco. It is known for being the first restaurant in San Francisco to exclusively serve an Omakase.

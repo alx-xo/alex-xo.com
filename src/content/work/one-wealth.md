@@ -7,9 +7,7 @@ startDate: 2017-01-01
 cardSize: "small"
 cover: "./assets/one-wealth-cover.jpg"
 coverAlt: ""
-images: [
-  "./assets/one-wealth-1.jpg",
-]
+images: ["./assets/one-wealth-1.jpg"]
 ---
 
 One Wealth Advisors is a firm that offers financial advisory services, specializing in investment management strategies and comprehensive wealth management.
