@@ -41,7 +41,7 @@ const contactData = [
 >
   <div class="flex justify-center items-center w-full min-h-[calc(100dvh-82px)] px-6">
     <Card title="contact">
-      <p class="text-base font-medium">
+      <p class="text-base font-medium not-italic">
         Always interested in discussing new projects. Available for full-time roles or contract
         work.
       </p>
@@ -52,7 +52,7 @@ const contactData = [
             <li class="space-y-1">
               <h2 class="text-lg font-black italic">{title}</h2>
               {links.map(({ label, link }) => (
-                <p class="text-base font-medium mx-2">
+                <p class="text-base font-medium italic mx-2">
                   <a href={link} class="underline underline-offset-2">
                     {label}
                   </a>
