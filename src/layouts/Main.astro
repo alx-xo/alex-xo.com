@@ -40,5 +40,10 @@ const faviconSvg = await getImage({ src: faviconSvgSrc, format: "svg" });
     <main class="relative z-0">
       <slot />
     </main>
+
+    <script
+      defer
+      src="https://static.cloudflareinsights.com/beacon.min.js"
+      data-cf-beacon='{"token": "fb1ca0c7f61f411281cb42894793f2bc"}'></script>
   </body>
 </html>
