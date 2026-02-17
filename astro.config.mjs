@@ -7,6 +7,6 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
-  site: "https://alex-xo.com/",
+  site: "https://alex-xo.com",
   integrations: [mdx(), sitemap()],
 });

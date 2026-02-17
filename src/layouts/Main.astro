@@ -20,6 +20,7 @@ const appleTouchIcon = await getImage({
   format: "png",
 });
 const faviconSvg = await getImage({ src: faviconSvgSrc, format: "svg" });
+const siteUrl = import.meta.env.SITE;
 ---
 
 <!doctype html>
@@ -33,6 +34,7 @@ const faviconSvg = await getImage({ src: faviconSvgSrc, format: "svg" });
     <link rel="apple-touch-icon" href={appleTouchIcon.src} />
 
     <link rel="sitemap" href="/sitemap-index.xml" />
+    <link rel="canonical" href={siteUrl} />
 
     <meta name="description" content={pageDescription} />
     <title>{pageTitle}</title>
