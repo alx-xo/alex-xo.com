@@ -20,7 +20,7 @@ const appleTouchIcon = await getImage({
   format: "png",
 });
 const faviconSvg = await getImage({ src: faviconSvgSrc, format: "svg" });
-const canonical = `${Astro.url.origin}${Astro.url.pathname}`;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
 <!doctype html>
@@ -37,9 +37,9 @@ const canonical = `${Astro.url.origin}${Astro.url.pathname}`;
 
     <title>{pageTitle}</title>
     <meta name="description" content={pageDescription} />
-    <link rel="canonical" href={canonical} />
+    <link rel="canonical" href={canonicalURL} />
     <meta property="og:locale" content="en_US" />
-    <meta property="og:url" content={canonical} />
+    <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={pageDescription} />
   </head>
