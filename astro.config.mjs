@@ -1,11 +1,12 @@
-// @ts-check
-import { defineConfig } from "astro/config";
-import tailwindcss from "@tailwindcss/vite";
 import mdx from "@astrojs/mdx";
+import sitemap from "@astrojs/sitemap";
+import tailwindcss from "@tailwindcss/vite";
+import { defineConfig } from "astro/config";
 
 export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
-  integrations: [mdx()],
+  site: "https://alex-xo.com/",
+  integrations: [mdx(), sitemap()],
 });
