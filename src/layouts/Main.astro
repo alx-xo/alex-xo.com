@@ -20,7 +20,7 @@ const appleTouchIcon = await getImage({
   format: "png",
 });
 const faviconSvg = await getImage({ src: faviconSvgSrc, format: "svg" });
-const siteUrl = import.meta.env.SITE;
+const canonical = `${Astro.url.origin}${Astro.url.pathname}`;
 ---
 
 <!doctype html>
@@ -34,10 +34,14 @@ const siteUrl = import.meta.env.SITE;
     <link rel="apple-touch-icon" href={appleTouchIcon.src} />
 
     <link rel="sitemap" href="/sitemap-index.xml" />
-    <link rel="canonical" href={siteUrl} />
 
-    <meta name="description" content={pageDescription} />
     <title>{pageTitle}</title>
+    <meta name="description" content={pageDescription} />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDescription} />
   </head>
   <body class="bg-background font-sans">
     <Header navActive={navActive} />
