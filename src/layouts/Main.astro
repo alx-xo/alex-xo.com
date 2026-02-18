@@ -2,6 +2,7 @@
 import { getImage } from "astro:assets";
 import faviconSvgSrc from "../assets/favicon.svg";
 import faviconPngSrc from "../assets/favicon.png";
+import openGraphImageSrc from "../assets/opengraph-thumbnail.png";
 import Header from "@/components/ui/Header.astro";
 
 import "@/styles/global.css";
@@ -20,6 +21,12 @@ const appleTouchIcon = await getImage({
   format: "png",
 });
 const faviconSvg = await getImage({ src: faviconSvgSrc, format: "svg" });
+const openGraphImage = await getImage({
+  src: openGraphImageSrc,
+  width: 1200,
+  height: 630,
+  format: "png",
+});
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
@@ -39,9 +46,15 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <meta name="description" content={pageDescription} />
     <link rel="canonical" href={canonicalURL} />
     <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={pageDescription} />
+
+    <meta property="og:image" content={openGraphImage.src} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/png" />
   </head>
   <body class="bg-background font-sans">
     <Header navActive={navActive} />
