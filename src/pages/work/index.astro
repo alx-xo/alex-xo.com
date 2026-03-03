@@ -1,15 +1,19 @@
 ---
 import { getCollection } from "astro:content";
+
 import Main from "@/layouts/Main.astro";
 import WorkCard from "@/components/ui/WorkCard.astro";
+import { CardSize } from "@/schema/work";
 
 const allWorks = (await getCollection("work")).sort(
   (a, b) => b.data.startDate.valueOf() - a.data.startDate.valueOf(),
 );
 
 const works = {
-  large: allWorks.filter((work) => !work.data.cardSize || work.data.cardSize === "large"),
-  small: allWorks.filter((work) => work.data.cardSize === "small"),
+  large: allWorks.filter(
+    (work) => !work.data.cardSize || work.data.cardSize === CardSize.LARGE,
+  ),
+  small: allWorks.filter((work) => work.data.cardSize === CardSize.SMALL),
 };
 ---
 
